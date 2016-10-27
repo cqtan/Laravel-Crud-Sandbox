@@ -7,48 +7,48 @@ and Eloquent ORM is also used.
 ## Setting up the environment:
 
 * Make sure you have Node.js version 6 or higher
-    *node -v*
+    **node -v**
 * (if not already) Install [Composer](https://getcomposer.org/download/) and check if correctly installed:
-    *composer*
+    **composer**
 * Create a new directory in the preferred directory using the CLI:
-    *composer create-project laravel/laravel <folder_name>*
+    **composer create-project laravel/laravel <folder_name>**
 * Navigate to the created folder and download npm dependencies with
-    *composer install*
+    **composer install**
 * download Gulp with:
-    *npm install --global gulp*
+    **npm install --global gulp**
 * Install all other npm dependencies as well as Laravel Elixir with
-    *npm install*
+    **npm install**
 * Check if Laravel Server can be run:
-    *php artisan serve*
-* open *localhost:8000* in the browser
+    **php artisan serve**
+* open **localhost:8000** in the browser
 * (Setup up Elixir (follow guide above) for sass and multiple javascript files, etc...)
 * Run MySQL and Apache
-* Run Gulp (preferably *gulp watch*) on a second CLI so you can run *php artisan serve* on the other
+* Run Gulp (preferably **gulp watch**) on a second CLI so you can run **php artisan serve** on the other
 
 ## Tips:
 
 * Setting up Gulp.js with [Laravel's Elixir](https://laravel.com/docs/5.3/elixir#working-with-scripts)
 * For [CRUDing](https://scotch.io/tutorials/simple-laravel-crud-with-resource-controllers)
 * Shortcut for Resource-Controller:
-    *php artisan make:controller <controller_name> --resource*
+    **php artisan make:controller <controller_name> --resource**
 * For Bootstrap Glyphicons create folder at "/public/fonts/bootstrap" and add this to the Gulp file:
-    *mix.copy('node_modules/bootstrap-sass/assets/fonts/bootstrap/','public/fonts/bootstrap');*
+    **mix.copy('node_modules/bootstrap-sass/assets/fonts/bootstrap/','public/fonts/bootstrap');**
 * When working with Sessions, Redirects, etc.. add this on top of the Controller
-    *use Illuminate\Support\Facades\Validator;*
-    *use Illuminate\Support\Facades\Input;*
-    *use Illuminate\Support\Facades\Redirect;*
-    *use Session;*
+    **use Illuminate\Support\Facades\Validator;**
+    **use Illuminate\Support\Facades\Input;**
+    **use Illuminate\Support\Facades\Redirect;**
+    **use Session;**
 * When working on Laravel Blade Forms, "Illuminate/Html" is deprecated so install "Collective/Html"
-    Follow [this site](https://laravelcollective.com/docs/5.2/html)
+    Follow this [guide](https://laravelcollective.com/docs/5.2/html)
 
 ## Authentication:
 
-* Following [this guide](https://auth0.com/blog/creating-your-first-laravel-app-and-adding-authentication/)
+* Following this [guide](https://auth0.com/blog/creating-your-first-laravel-app-and-adding-authentication/)
 * Configures and creates auth files automatically:
-    *php artisan make:auth*
+    **php artisan make:auth**
 * This creates a bunch of files: "views/auth", adds code to "web.php" and in the controller, etc.
 * Migrate the migration data that were already precreated in "database/migrations"
-    *php artisan migrate*
+    **php artisan migrate**
 * Configure the "LoginController.php" and the "RegisterController.php" files on the "$redirectTo" variable
 * Configure the views: "views/auth", "home.blade.php" and "welcome.blade.php"
 
@@ -63,8 +63,6 @@ and Eloquent ORM is also used.
     GET | /my/{my}/edit | edit | my.edit
     PUT/PATCH |/my/{my} | update | my.update
     DELETE | /my/{my} | destroy | my.destroy
-
-
 
 # Laravel PHP Framework
 
