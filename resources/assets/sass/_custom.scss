@@ -1,0 +1,146 @@
+html, body {
+  background: $body_bg;
+  color: white;
+
+}
+
+header, nav {
+  background: $header_bg;
+  //border: 1px solid black;
+  height: 5vh;
+  margin: 0;
+  text-align: left;
+  display: table; /*acts like a table*/
+  width: 100%;
+  h1 {
+    vertical-align: middle; /*middle centred*/
+    display: table-cell; /*acts like a table cell*/
+  }
+  .navbar {
+    color: white;
+    border: 1px solid black;
+    background: $header_bg;
+    width: 100%;
+    margin: 0;
+    min-height: 5vh;
+    .container {
+      width: 100%;
+      a, navbar-brand {
+        vertical-align: middle; /*middle centred*/
+        display: table-cell; /*acts like a table cell*/
+        font-size: 22px;
+        font-family: "Raleway";
+        color: white;
+        min-height: 5vh;
+      }
+      .dropdown-menu a {
+        color: $header_bg;
+      }
+      .dropdown {
+        vertical-align: middle; /*middle centred*/
+        display: table-cell; /*acts like a table cell*/
+      }
+    }
+  }
+}
+
+.col-xs-12 {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#auth_header {
+  padding-left: 15px;
+  font-size: 22px;
+  font-style: normal;
+}
+
+
+aside {
+  background: $aside_bg;
+  height: 90vh;
+  max-width: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  div {
+    margin: 5px;
+  }
+}
+
+section {
+  height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  article {
+    color: black;
+    width: 100%;
+    margin: 20px;
+    p {
+      margin: 20px;
+    }
+  }
+}
+
+footer {
+  background: $footer_bg;
+  height: 5vh;
+  text-align:center;
+  display: table; /*acts like a table*/
+  p {
+    vertical-align: middle; /*middle centred*/
+    display: table-cell; /*acts like a table cell*/
+  }
+}
+
+.menu_name_textfield, .select_subject {
+  width: 300px;
+}
+
+.select_field {
+  width: 80px;
+}
+
+.error_fonts {
+  color: $error_color;
+}
+
+// For horizontally aligned buttons:
+td button, .submit_group {
+  float: left;
+  margin-right: 5px;
+}
+
+.panel, .panel-default, .panel-title {
+  background: $body_bg;
+}
+
+.panel-body {
+  background: white;
+  color: black;
+  margin: 0;
+  padding: 5px;
+}
+
+.panel-heading {
+  padding: 0;
+}
+
+.panel-collapse {
+  margin: 0;
+}
+
+table {
+  margin-top: 30px;
+}
+
+.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+    border-top: 1px solid #ddd;
+    line-height: 1.6;
+    padding: 5px;
+    vertical-align: top;
+}
+
+.accordion_title {
+  padding: 10px;
+}

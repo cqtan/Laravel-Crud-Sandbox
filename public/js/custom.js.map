@@ -1,0 +1,1 @@
+{"version":3,"sources":["custom.js"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA","file":"custom.js","sourcesContent":["$(document).ready(function(){\r\n    $(\".btn_accordion\").click(function(){\r\n      $('.panel-collapse').collapse('show');\r\n    });\r\n});\r\n"]}

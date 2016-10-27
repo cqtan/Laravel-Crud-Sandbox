@@ -1,0 +1,28 @@
+body {
+  background: #eee4b9;
+}
+
+header {
+  background: black;
+}
+
+aside {
+  background: blue;
+  height: 800px;
+}
+
+section {
+  background: green;
+  min-height: 500px;
+  height: 800px;
+
+}
+
+article {
+  background: yellow;
+
+}
+
+footer {
+  background: black;
+}
