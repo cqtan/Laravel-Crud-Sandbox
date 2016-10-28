@@ -14,13 +14,13 @@ and Eloquent ORM is also used.
     **composer create-project laravel/laravel <folder_name>**
 * Navigate to the created folder and download npm dependencies with
     **composer install**
-* download Gulp with:
+* Download Gulp with:
     **npm install --global gulp**
 * Install all other npm dependencies as well as Laravel Elixir with
     **npm install**
 * Check if Laravel Server can be run:
     **php artisan serve**
-* open **localhost:8000** in the browser
+* Open **localhost:8000** in the browser
 * (Setup up Elixir (follow guide above) for sass and multiple javascript files, etc...)
 * Run MySQL and Apache
 * Run Gulp (preferably **gulp watch**) on a second CLI so you can run **php artisan serve** on the other
@@ -63,6 +63,29 @@ and Eloquent ORM is also used.
     GET | /my/{my}/edit | edit | my.edit
     PUT/PATCH |/my/{my} | update | my.update
     DELETE | /my/{my} | destroy | my.destroy
+
+## Deploy using Heroku
+
+* Install the Heroku CLI in this [guide](https://devcenter.heroku.com/articles/heroku-command-line)   
+* Type in the console to check if setup is successful and to finish insstallation
+    **heroku --version**
+* Navigate to the project directory and have it in a "*git commit*"-state
+* Create a Procfile (tells Heroku what command to use to launch the web server correctly)
+    **echo web: vendor/bin/heroku-php-apache2 public/ > Procfile**
+* Add and commit once again and create the heroku application
+    **heroku create**
+* Declare a buildpack (explicitly tells heroku that the app is written in PHP instead of NodeJS)
+    **heroku buildpacks:set heroku/php**
+* Generate the Laravel encryption key (encrypts user sessions and other information)
+    **php artisan key:generate --show** (copy the generated key)
+* Set the encrytion key:
+    **heroku config:set APP_KEY=...** (Paste encryption key in "...")
+* Push to Heroku
+    **git push heroku master**
+* After successful push, you can view your app in the web under the generated URL or with
+    **heroku open**
+* For debugging errors
+    **heroku logs**
 
 # Laravel PHP Framework
 
