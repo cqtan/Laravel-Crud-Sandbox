@@ -81,6 +81,8 @@ and Eloquent ORM is also used.
     **php artisan key:generate --show** (copy the generated key e.g:**"base64:GpYbrM06CjwxP++I2Y3eccFqTnGfQddQVTNjOuGPcdE="**)
 * Set the encrytion key:
     **heroku config:set APP_KEY=...** (Paste encryption key in "...")
+* Optional: You might also need to set the same key in "config/app.php" on this line
+    "**'key' => env('APP_KEY', 'base64:GpYbrM06CjwxP++I2Y3eccFqTnGfQddQVTNjOuGPcdE='),**"
 * Push to Heroku
     **git push heroku master**
 * After successful push, you can view your app in the web under the generated URL or with
