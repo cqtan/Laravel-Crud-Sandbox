@@ -78,7 +78,7 @@ and Eloquent ORM is also used.
 * Declare a buildpack (explicitly tells heroku that the app is written in PHP instead of NodeJS)
     **heroku buildpacks:set heroku/php**
 * Generate the Laravel encryption key (encrypts user sessions and other information)
-    **php artisan key:generate --show** (copy the generated key)
+    **php artisan key:generate --show** (copy the generated key e.g:**"base64:GpYbrM06CjwxP++I2Y3eccFqTnGfQddQVTNjOuGPcdE="**)
 * Set the encrytion key:
     **heroku config:set APP_KEY=...** (Paste encryption key in "...")
 * Push to Heroku
