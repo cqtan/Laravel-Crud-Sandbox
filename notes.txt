@@ -67,3 +67,5 @@ Authentication:
     php artisan migrate
 - Configure the "LoginController.php" and the "RegisterController.php" files on the "$redirectTo" variable
 -Configure the views: "views/auth", "home.blade.php" and "welcome.blade.php"
+
+DATABASE_URL: postgres://qhqdpnktvddeqg:W7NUvucVz-96tJSz9ig83XXa8I@ec2-54-235-180-14.compute-1.amazonaws.com:5432/d563pmbi7fs2n8

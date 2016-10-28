@@ -90,6 +90,31 @@ and Eloquent ORM is also used.
 * For debugging errors
     **heroku logs**
 
+## Using PostgreSQL in Heroku
+postgresql-spherical-62738 as DATABASE_URL
+app = aqueous-cove-69920
+
+* Create a add-on for PostgreSQL (free with significant limitations: limit = 10000 rows)
+    **heroku addons:add heroku-postgresql:hobby-dev**
+* Follow this schema for the database setting in "**config/database.php**":
+```
+  'default' => 'pgsql',
+
+  ...
+
+  'pgsql' => [
+    'driver'   => 'pgsql',
+    'host'     => parse_url(getenv("DATABASE_URL"))["host"],
+    'database' => substr(parse_url(getenv("DATABASE_URL"))["path"], 1),
+    'username' => parse_url(getenv("DATABASE_URL"))["user"],
+    'password' => parse_url(getenv("DATABASE_URL"))["pass"],
+    'charset'  => 'utf8',
+    'prefix'   => '',
+    'schema'   => 'public',
+  ],
+```
+
+
 # Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
