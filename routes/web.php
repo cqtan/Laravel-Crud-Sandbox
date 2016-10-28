@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/manage_content', [
-    'middleware' => ['auth'],
+    //'middleware' => ['auth'],
     'uses' => function () {
       return view('sites.manage_content');
 }])->name('manage_content');
