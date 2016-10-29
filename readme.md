@@ -75,7 +75,7 @@ code snippets or file paths.
 
 ## Deploy using Heroku
 
-* Sign up on the [Heroku website](https://id.heroku.com/login)
+* Sign up in the [Heroku website](https://id.heroku.com/login)
 * Install the Heroku CLI in this [guide](https://devcenter.heroku.com/articles/heroku-command-line)   
 * Type in the console to check if setup is successful and to finish insstallation:
     * **heroku --version**
