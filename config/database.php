@@ -26,8 +26,8 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),  // in ".env" change to "pgsql" for production
-    //'default' => 'pgsql',
+    //'default' => env('DB_CONNECTION', 'mysql'),  // in ".env" change to "pgsql" for production
+    'default' => 'pgsql',
     /*
     |--------------------------------------------------------------------------
     | Database Connections
