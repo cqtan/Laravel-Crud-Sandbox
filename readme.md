@@ -113,6 +113,12 @@ app = aqueous-cove-69920
     'schema'   => 'public',
   ],
 ```
+* To check your pgsql credentials if you want to add the info directly:
+    **heroku config --app lit-retreat-6653 | grep DATABASE_URL**
+* Commit changes and push to heroku and finally migrate your database
+    **heroku run php artisan migrate --app <app_name>**
+* You should now have a working app when viewing in the browser
+    **heroku open**
 
 
 # Laravel PHP Framework
