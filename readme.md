@@ -37,6 +37,7 @@ code snippets or file paths.
 
 * Create your database schema using the built-in [migration](https://laravel.com/docs/5.3/migrations) template:
     * **php artisan make:migration <migration_name>**
+* Try deploying a prototype to Heroku as early as possible to minimize debugging later on
 * Setting up Gulp.js with [Laravel's Elixir](https://laravel.com/docs/5.3/elixir#working-with-scripts)
 * For [CRUDing](https://scotch.io/tutorials/simple-laravel-crud-with-resource-controllers)
 * Shortcut for Resource-Controller:
