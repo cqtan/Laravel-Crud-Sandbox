@@ -4,6 +4,9 @@ This project is aimed to copy and remake Lynda's PHP exercises from Chapters 15 
 while using Laravel 5.3 as the framework. Additionally, Gulp, Sass and Laravel's Blade
 and Eloquent ORM is also used.
 
+Database is currently set to Heroku's PostgreSQL. To change it back to MySQL, go to "/config/database.php" and change
+"**'default' => 'pgsql',**" to "**'default' => 'mysql',**".
+
 ## Setting up the environment:
 
 * Make sure you have Node.js version 6 or higher
@@ -91,8 +94,10 @@ and Eloquent ORM is also used.
     **heroku logs**
 
 ## Using PostgreSQL in Heroku
-postgresql-spherical-62738 as DATABASE_URL
-app = aqueous-cove-69920
+
+> **Heroku / PostgreSQL information used here:**
+> postgresql-spherical-62738 as DATABASE_URL
+> app = aqueous-cove-69920
 
 * Create a add-on for PostgreSQL (free with significant limitations: limit = 10000 rows)
     **heroku addons:add heroku-postgresql:hobby-dev**
@@ -113,13 +118,14 @@ app = aqueous-cove-69920
     'schema'   => 'public',
   ],
 ```
-* To check your pgsql credentials if you want to add the info directly:
+* To check your pgsql information if you want to add the it directly to the snippet above:
     **heroku config --app lit-retreat-6653 | grep DATABASE_URL**
 * Commit changes and push to heroku and finally migrate your database
     **heroku run php artisan migrate --app <app_name>**
 * You should now have a working app when viewing in the browser
     **heroku open**
 
+***
 
 # Laravel PHP Framework
 
