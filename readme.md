@@ -35,6 +35,8 @@ code snippets or file paths.
 
 ## Tips:
 
+* Create your database schema using the built-in [migration](https://laravel.com/docs/5.3/migrations) template:
+    * **php artisan make:migration <migration_name>**
 * Setting up Gulp.js with [Laravel's Elixir](https://laravel.com/docs/5.3/elixir#working-with-scripts)
 * For [CRUDing](https://scotch.io/tutorials/simple-laravel-crud-with-resource-controllers)
 * Shortcut for Resource-Controller:
@@ -103,7 +105,8 @@ code snippets or file paths.
 > * postgresql-spherical-62738 as DATABASE_URL
 > * app = aqueous-cove-69920
 
-* Create a add-on for PostgreSQL (free with significant limitations: limit = 10000 rows):
+* Make sure you have made migration files for the database
+* Create an add-on for PostgreSQL (free with significant limitations: limit = 10000 rows):
     * **heroku addons:add heroku-postgresql:hobby-dev**
 * Follow this schema for the database setting in "**config/database.php**":
 ```
