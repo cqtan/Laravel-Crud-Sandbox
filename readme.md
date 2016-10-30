@@ -34,15 +34,27 @@ code snippets or file paths. A preview of this webapp can be seen [here](https:/
 * Run MySQL and Apache
 * Run Gulp (preferably **gulp watch**) on a second CLI so you can run "**php artisan serve**" on the other
 
-## Tips:
+## Workflow:
 
+* Setup your environment variables in the ".env" file in the root directory according to the one you are using:
+  ```
+  DB_CONNECTION=mysql
+  DB_HOST=127.0.0.1
+  DB_PORT=3306
+  DB_DATABASE=s02_laravel_migration
+  DB_USERNAME=root
+  DB_PASSWORD=
+  ```
 * Create your database schema using the built-in [migration](https://laravel.com/docs/5.3/migrations) template:
     * **php artisan make:migration <migration_name>**
-* Try deploying a prototype to Heroku as early as possible to minimize debugging later on
+* Create the view in the directory "/resources/views" while following [Blade guidelines](https://laravel.com/docs/5.3/blade)
+* Create some simple routes in the "/routes/web.php" file for some testing and try deploying a prototype to Heroku as early as possible to minimize debugging later on.
 * Setting up Gulp.js with [Laravel's Elixir](https://laravel.com/docs/5.3/elixir#working-with-scripts)
 * For [CRUDing](https://scotch.io/tutorials/simple-laravel-crud-with-resource-controllers)
-* Shortcut for Resource-Controller:
+* Shortcut for Resource-Controller (see table below for predefined implicit routes):
     * **php artisan make:controller <controller_name> --resource**
+* Defining models and simultaneously create a migration for it:
+    * **php artisan make:model <model_name> --migration**
 * For Bootstrap Glyphicons create folder at "/public/fonts/bootstrap" and add this to the Gulp file:
     * **mix.copy('node_modules/bootstrap-sass/assets/fonts/bootstrap/','public/fonts/bootstrap');**
 * When working with Sessions, Redirects, etc.. add this on top of the Controller:
@@ -51,17 +63,6 @@ code snippets or file paths. A preview of this webapp can be seen [here](https:/
     * **use Illuminate\Support\Facades\Redirect;**  
     * **use Session;**
 * When working on Laravel Blade Forms, "Illuminate/Html" is deprecated so install "Collective/Html" Follow this [guide](https://laravelcollective.com/docs/5.2/html)
-
-## Authentication:
-
-* Following this [guide](https://auth0.com/blog/creating-your-first-laravel-app-and-adding-authentication/)
-* Configures and creates auth files automatically:
-    * **php artisan make:auth**
-* This creates a bunch of files: "views/auth", adds code to "web.php" and in the controller, etc.
-* Migrate the migration data that were already created before in "database/migrations":
-    * **php artisan migrate**
-* Configure the "LoginController.php" and the "RegisterController.php" files on the "$redirectTo" variable
-* Configure the views: "views/auth", "home.blade.php" and "welcome.blade.php"
 
 ## Resource - Controller actions:
 
@@ -74,6 +75,17 @@ code snippets or file paths. A preview of this webapp can be seen [here](https:/
     GET | /my/{my}/edit | edit | my.edit
     PUT/PATCH |/my/{my} | update | my.update
     DELETE | /my/{my} | destroy | my.destroy
+    
+## Authentication:
+
+* Following this [guide](https://auth0.com/blog/creating-your-first-laravel-app-and-adding-authentication/)
+* Configures and creates auth files automatically:
+    * **php artisan make:auth**
+* This creates a bunch of files: "views/auth", adds code to "web.php" and in the controller, etc.
+* Migrate the migration data that were already created before in "database/migrations":
+    * **php artisan migrate**
+* Configure the "LoginController.php" and the "RegisterController.php" files on the "$redirectTo" variable
+* Configure the views: "views/auth", "home.blade.php" and "welcome.blade.php"
 
 ## Deploy using Heroku
 
