@@ -10,7 +10,7 @@ Database is currently set to Heroku's PostgreSQL. To change it back to MySQL for
 development, go to "/config/database.php" and change
 " **'default' => 'pgsql',** " to " **'default' => 'mysql',** ".
 
-Most of the words wirtten in **bold** are either commands to be written in the CLI or
+Most of the words written in **bold** are either commands to be written in the CLI or
 code snippets or file paths. A preview of this webapp can be seen [here](https://aqueous-cove-69920.herokuapp.com/).
 
 ## Setting up the environment:
@@ -102,7 +102,7 @@ code snippets or file paths. A preview of this webapp can be seen [here](https:/
     * **heroku buildpacks:set heroku/php**
 * Generate the Laravel encryption key (encrypts user sessions and other information):
     * **php artisan key:generate --show** (copy the generated key e.g:**"base64:GpYbrM06CjwxP++I2Y3eccFqTnGfQddQVTNjOuGPcdE="**)
-* Set the encrytion key:
+* Set the encryption key:
     * **heroku config:set APP_KEY=...** (Paste encryption key in "...")
 * Optional: You might also need to set the same key in "config/app.php" on this line:
     * " **'key' => env('APP_KEY', 'base64:GpYbrM06CjwxP++I2Y3eccFqTnGfQddQVTNjOuGPcdE='),** "
@@ -142,7 +142,7 @@ code snippets or file paths. A preview of this webapp can be seen [here](https:/
 ```
 * To check your pgsql information if you want to add the it directly to the snippet above:
     * **heroku config --app lit-retreat-6653 | grep DATABASE_URL**
-* Commit changes and push to heroku and finally migrate your database:
+* Commit changes and push to Heroku and finally migrate your database:
     * **heroku run php artisan migrate --app <app_name>**
 * You should now have a working app when viewing in the browser:
     * **heroku open**
