@@ -20,7 +20,7 @@ code snippets or file paths. A preview of this webapp can be seen [here](https:/
 * (if not already) Install [Composer](https://getcomposer.org/download/) and check if correctly installed:
     * **composer**
 * Create a new directory in the preferred directory using the CLI:
-    * **composer create-project laravel/laravel <folder_name>**
+    * **composer create-project laravel/laravel folder_name**
 * Navigate to the created folder and download npm dependencies with:
     * **composer install**
 * Download Gulp with:
@@ -46,15 +46,15 @@ code snippets or file paths. A preview of this webapp can be seen [here](https:/
     DB_PASSWORD=
   ```
 * Create your database schema using the built-in [migration](https://laravel.com/docs/5.3/migrations) template:
-    * **php artisan make:migration <migration_name>**
+    * **php artisan make:migration migration_name**
 * Create the view in the directory "/resources/views" while following [Blade guidelines](https://laravel.com/docs/5.3/blade)
 * Create some simple routes in the "/routes/web.php" file for some testing and try deploying a prototype to Heroku as early as possible to minimize debugging later on.
 * Setting up Gulp.js with [Laravel's Elixir](https://laravel.com/docs/5.3/elixir#working-with-scripts)
 * For [CRUDing](https://scotch.io/tutorials/simple-laravel-crud-with-resource-controllers)
 * Shortcut for Resource-Controller (see table below for predefined implicit routes):
-    * **php artisan make:controller <controller_name> --resource**
+    * **php artisan make:controller controller_name --resource**
 * Defining models and simultaneously create a migration for it:
-    * **php artisan make:model <model_name> --migration**
+    * **php artisan make:model model_name --migration**
 * For Bootstrap Glyphicons create folder at "/public/fonts/bootstrap" and add this to the Gulp file:
     * **mix.copy('node_modules/bootstrap-sass/assets/fonts/bootstrap/','public/fonts/bootstrap');**
 * When working with Sessions, Redirects, etc.. add this on top of the Controller:
@@ -143,7 +143,7 @@ code snippets or file paths. A preview of this webapp can be seen [here](https:/
 * To check your pgsql information if you want to add the it directly to the snippet above:
     * **heroku config --app lit-retreat-6653 | grep DATABASE_URL**
 * Commit changes and push to Heroku and finally migrate your database:
-    * **heroku run php artisan migrate --app <app_name>**
+    * **heroku run php artisan migrate --app app_name**
 * You should now have a working app when viewing in the browser:
     * **heroku open**
 
