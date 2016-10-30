@@ -38,12 +38,12 @@ code snippets or file paths. A preview of this webapp can be seen [here](https:/
 
 * Setup your environment variables in the ".env" file in the root directory according to the one you are using:
   ```
-  DB_CONNECTION=mysql
-  DB_HOST=127.0.0.1
-  DB_PORT=3306
-  DB_DATABASE=s02_laravel_migration
-  DB_USERNAME=root
-  DB_PASSWORD=
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=s02_laravel_migration
+    DB_USERNAME=root
+    DB_PASSWORD=
   ```
 * Create your database schema using the built-in [migration](https://laravel.com/docs/5.3/migrations) template:
     * **php artisan make:migration <migration_name>**
@@ -75,7 +75,7 @@ code snippets or file paths. A preview of this webapp can be seen [here](https:/
     GET | /my/{my}/edit | edit | my.edit
     PUT/PATCH |/my/{my} | update | my.update
     DELETE | /my/{my} | destroy | my.destroy
-    
+
 ## Authentication:
 
 * Following this [guide](https://auth0.com/blog/creating-your-first-laravel-app-and-adding-authentication/)
