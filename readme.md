@@ -1,20 +1,21 @@
-# My first Laravel application using CRUD :joy_cat:
+# My simple Laravel 5.3 Application using CRUD :joy_cat:
+![Sandbox](/resources/images/sandbox-banner.jpg)
 
-This project is aimed to copy and remake Lynda's PHP exercises from Chapters 15 - 19
-while using Laravel 5.3 as the framework. Additionally, Gulp, Sass,  Laravel's Blade
-and Eloquent ORM are also used as well as deployment using the free services of Heroku
-and PostgreSQL.
+This project aims to copy and remake Lynda's PHP exercises from Chapters 15 - 19
+while using Laravel 5.3 as the framework and serves as a reference. Additionally,
+Gulp, Sass,  Laravel's Blade and Eloquent ORM are also used as well as deployment
+using the free services of Heroku and PostgreSQL.
 
 Database is currently set to Heroku's PostgreSQL. To change it back to MySQL for local
 development, go to "/config/database.php" and change
 " **'default' => 'pgsql',** " to " **'default' => 'mysql',** ".
 
 Most of the words wirtten in **bold** are either commands to be written in the CLI or
-code snippets or file paths.
+code snippets or file paths. A preview of this webapp can be seen [here](https://aqueous-cove-69920.herokuapp.com/).
 
 ## Setting up the environment:
 
-* Make sure you have Node.js version 6 or higher:
+* Make sure you have [Node.js](https://nodejs.org/en/) version 6 or higher:
     * **node -v**
 * (if not already) Install [Composer](https://getcomposer.org/download/) and check if correctly installed:
     * **composer**
@@ -77,7 +78,7 @@ code snippets or file paths.
 ## Deploy using Heroku
 
 * Sign up in the [Heroku website](https://id.heroku.com/login)
-* Install the Heroku CLI in this [guide](https://devcenter.heroku.com/articles/heroku-command-line)   
+* Install the Heroku CLI following this [guide](https://devcenter.heroku.com/articles/heroku-command-line)   
 * Type in the console to check if setup is successful and to finish insstallation:
     * **heroku --version**
 * Navigate to the project directory and have it in a "*git commit*"-state
@@ -106,6 +107,7 @@ code snippets or file paths.
 > * postgresql-spherical-62738 as DATABASE_URL
 > * app = aqueous-cove-69920
 
+* The following is taken from this [guide](http://www.easylaravelbook.com/blog/2015/01/31/deploying-a-laravel-application-to-heroku/)
 * Make sure you have made migration files for the database
 * Create an add-on for PostgreSQL (free with significant limitations: limit = 10000 rows):
     * **heroku addons:add heroku-postgresql:hobby-dev**
