@@ -1,19 +1,17 @@
 # My simple Laravel 5.3 Application using CRUD :joy_cat:
 ![Sandbox](/resources/images/sandbox-banner.jpg)
 
+# Introduction:
+
 This project aims to copy and remake Lynda's PHP exercises from Chapters 15 - 19
 while using Laravel 5.3 as the framework and serves as a reference. Additionally,
 Gulp, Sass,  Laravel's Blade and Eloquent ORM are also used as well as deployment
 using the free services of Heroku and PostgreSQL.
 
-Database is currently set to Heroku's PostgreSQL. To change it back to MySQL for local
-development, go to "/config/database.php" and change
-" **'default' => 'pgsql',** " to " **'default' => 'mysql',** ".
-
-Most of the words written in **bold** are either commands to be written in the CLI or
+Most of the words written in **bold** are either commands to be written in the CLI,
 code snippets or file paths.
 
-This Project is relatively rudimentary and should just showcase a simple CRUD pattern with the technologies
+This application is relatively rudimentary and should just showcase a simple CRUD pattern with the technologies
 mentioned above. A preview of this webapp can be seen [here](https://aqueous-cove-69920.herokuapp.com/).
 
 You will first land on Laravel's pre-made index page, however, there are 2 links on the upper right corner
@@ -22,6 +20,10 @@ you will be redirected to the homepage where you can create, edit, delete or jus
 can have additional pages belonging to a subject, which again CRUD can be performed on.
 
 ![example](/resources/images/example.png)
+
+Database is currently set to Heroku's PostgreSQL. To change it back to MySQL for local
+development, go to "/config/database.php" and change
+" **'default' => 'pgsql',** " to " **'default' => 'mysql',** ".
 
 ## Setting up the environment:
 
