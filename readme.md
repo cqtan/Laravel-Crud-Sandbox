@@ -11,7 +11,16 @@ development, go to "/config/database.php" and change
 " **'default' => 'pgsql',** " to " **'default' => 'mysql',** ".
 
 Most of the words written in **bold** are either commands to be written in the CLI or
-code snippets or file paths. A preview of this webapp can be seen [here](https://aqueous-cove-69920.herokuapp.com/).
+code snippets or file paths.
+
+This Project is relatively rudimentary and should just showcase a simple CRUD pattern with the technologies
+mentioned above. A preview of this webapp can be seen [here](https://aqueous-cove-69920.herokuapp.com/).
+
+You will first land on Laravel's pre-made index page, however, there are 2 links on the upper right corner
+where you can either register a fake account with a fake email or login with the fake email. Once registered,
+you will be redirected to the homepage where you can create, edit, delete or just see subjects, which
+can have additional pages belonging to a subject, which again CRUD can be performed on.
+
 
 ## Setting up the environment:
 
@@ -23,19 +32,25 @@ code snippets or file paths. A preview of this webapp can be seen [here](https:/
     * **composer create-project laravel/laravel folder_name**
 * Navigate to the created folder and download npm dependencies with:
     * **composer install**
-* Download Gulp with:
-    * **npm install --global gulp**
+* Download Gulp for Sass and other organizing tasks and Bower for easy Front-End dependency inclusion with:
+    * **npm install --global gulp bower**
 * Install all other npm dependencies as well as Laravel's Elixir:
     * **npm install**
-* Check if Laravel Server can be run:
+* Configure/create Bower config file ".bowerrc" to place dependencies somewhere else other than root:
+```
+  {
+    "directory": "resource/assets/js"
+  }
+```
+* You will need to add the above path inside your project’s ".gitignore" file as well.
+* Install Front-end dependencies if needed (e.g. AngularJS, etc..):
+    * **bower install angular angular-bootstrap angular-resource bootstrap moment**
+* Check if Laravel Server can be run (CTRL+C to cancel):
     * **php artisan serve**
 * Open **localhost:8000** in the browser
 * (Setup up Elixir (follow guide above) for sass and multiple javascript files, etc...)
 * Run MySQL and Apache
-* Run Gulp (preferably **gulp watch**) on a second CLI so you can run "**php artisan serve**" on the other
-
-## Workflow:
-
+* Create your Database either in the CLI, using Eloquent or phpMyAdmin
 * Setup your environment variables in the ".env" file in the root directory according to the one you are using:
   ```
     DB_CONNECTION=mysql
@@ -45,16 +60,31 @@ code snippets or file paths. A preview of this webapp can be seen [here](https:/
     DB_USERNAME=root
     DB_PASSWORD=
   ```
+* Run the following command for Laravel to keep track, which migration have already run:
+    * **php artisan migrate:install**
+* Run Gulp to load Bootstrap and jQuery
+    * **gulp**
+
+## Workflow:
+
 * Create your database schema using the built-in [migration](https://laravel.com/docs/5.3/migrations) template:
-    * **php artisan make:migration migration_name**
+    * **php artisan make:migration migration_name** (Choose a plural name for the table)
+    * **php artisan make:migration create_users_table --create=users** (to generate a prefilled stub for "users")
+* Migrate the schema to the database and check the database if a table was created:
+    * **php artisan migrate**
+* Defining a model for a table and simultaneously create a migration for it:
+    * **php artisan make:model User --migration** (Choose the singular form for the model according to a created table)
+* Creating default/dummy values in the database can be achieved through [seeding](https://laravel.com/docs/5.3/seeding):
+    * **php artisan make:seeder UsersTableSeeder** (Plural name like the table name)
 * Create the view in the directory "/resources/views" while following [Blade guidelines](https://laravel.com/docs/5.3/blade)
+* Shortcut for Resource-Controller (see table below for API):
+    * **php artisan make:controller UserController --resource** (It is advised to use capital singular and postfix it with 'Controller')
 * Create some simple routes in the "/routes/web.php" file for some testing and try deploying a prototype to Heroku as early as possible to minimize debugging later on.
+* Double check your API routes paths you have made:
+    * **php artisan route:list**
 * Setting up Gulp.js with [Laravel's Elixir](https://laravel.com/docs/5.3/elixir#working-with-scripts)
+* Run Gulp (preferably **gulp watch**) on a second CLI so you can run "**php artisan serve**" on the other
 * For [CRUDing](https://scotch.io/tutorials/simple-laravel-crud-with-resource-controllers)
-* Shortcut for Resource-Controller (see table below for predefined implicit routes):
-    * **php artisan make:controller controller_name --resource**
-* Defining models and simultaneously create a migration for it:
-    * **php artisan make:model model_name --migration**
 * For Bootstrap Glyphicons create folder at "/public/fonts/bootstrap" and add this to the Gulp file:
     * **mix.copy('node_modules/bootstrap-sass/assets/fonts/bootstrap/','public/fonts/bootstrap');**
 * When working with Sessions, Redirects, etc.. add this on top of the Controller:
@@ -64,7 +94,7 @@ code snippets or file paths. A preview of this webapp can be seen [here](https:/
     * **use Session;**
 * When working on Laravel Blade Forms, "Illuminate/Html" is deprecated so install "Collective/Html" Follow this [guide](https://laravelcollective.com/docs/5.2/html)
 
-## Resource - Controller actions:
+## Resource Controller API:
 
     Verb | Path | Action | Route Name
     -----|------|--------|-----------
