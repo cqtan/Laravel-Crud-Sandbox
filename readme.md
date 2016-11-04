@@ -21,6 +21,7 @@ where you can either register a fake account with a fake email or login with the
 you will be redirected to the homepage where you can create, edit, delete or just see subjects, which
 can have additional pages belonging to a subject, which again CRUD can be performed on.
 
+![example](/resources/images/example.png)
 
 ## Setting up the environment:
 
