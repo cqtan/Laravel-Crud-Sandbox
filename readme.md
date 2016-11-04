@@ -8,9 +8,6 @@ while using Laravel 5.3 as the framework and serves as a reference. Additionally
 Gulp, Sass,  Laravel's Blade and Eloquent ORM are also used as well as deployment
 using the free services of Heroku and PostgreSQL.
 
-Most of the words written in **bold** are either commands to be written in the CLI,
-code snippets or file paths.
-
 This application is relatively rudimentary and should just showcase a simple CRUD pattern with the technologies
 mentioned above. A preview of this webapp can be seen [here](https://aqueous-cove-69920.herokuapp.com/).
 
@@ -26,7 +23,8 @@ development, go to "/config/database.php" and change
 " **'default' => 'pgsql',** " to " **'default' => 'mysql',** ".
 
 Below you will find the configurations and workflow that this project has partaken as well as
-links to the guides I have followed to achieve certain tasks.
+links to the guides I have followed to achieve certain tasks. Most of the words written
+in **bold** are either commands to be written in the CLI, code snippets or file paths.
 
 ## Setting up the environment:
 
