@@ -52,9 +52,7 @@ in **bold** are either commands to be written in the CLI, code snippets or file 
 * Check if Laravel Server can be run (CTRL+C to cancel):
     * **php artisan serve**
 * Open **localhost:8000** in the browser
-* (Setup up Elixir (follow guide above) for sass and multiple javascript files, etc...)
-* Run MySQL and Apache
-* Create your Database either in the CLI, using Eloquent or phpMyAdmin
+* Run MySQL (Here XAMPP was used)
 * Setup your environment variables in the ".env" file in the root directory according to the one you are using:
   ```
     DB_CONNECTION=mysql
@@ -76,7 +74,7 @@ in **bold** are either commands to be written in the CLI, code snippets or file 
     * **php artisan make:migration create_users_table --create=users** (to generate a prefilled stub for "users")
 * Migrate the schema to the database and check the database if a table was created:
     * **php artisan migrate**
-* Defining a model for a table and simultaneously create a migration for it:
+* You can also define a model for a table and simultaneously create a migration for it:
     * **php artisan make:model User --migration** (Choose the singular form for the model according to a created table)
 * Creating default/dummy values in the database can be achieved through [seeding](https://laravel.com/docs/5.3/seeding):
     * **php artisan make:seeder UsersTableSeeder** (Plural name like the table name)
@@ -86,17 +84,17 @@ in **bold** are either commands to be written in the CLI, code snippets or file 
 * Create some simple routes in the "/routes/web.php" file for some testing and try deploying a prototype to Heroku as early as possible to minimize debugging later on.
 * Double check your API routes paths you have made:
     * **php artisan route:list**
-* Setting up Gulp.js with [Laravel's Elixir](https://laravel.com/docs/5.3/elixir#working-with-scripts)
+* Setting up Gulp.js with [Laravel's Elixir](https://laravel.com/docs/5.3/elixir#working-with-scripts) for sass and combining and minifying multiple JavaScript files.
 * Run Gulp (preferably **gulp watch**) on a second CLI so you can run "**php artisan serve**" on the other
-* For [CRUDing](https://scotch.io/tutorials/simple-laravel-crud-with-resource-controllers)
-* For Bootstrap Glyphicons create folder at "/public/fonts/bootstrap" and add this to the Gulp file:
+* A guide [CRUDing](https://scotch.io/tutorials/simple-laravel-crud-with-resource-controllers)
+* For Bootstrap Glyphicons create a afolder at "/public/fonts/bootstrap" and add this to the Gulp file:
     * **mix.copy('node_modules/bootstrap-sass/assets/fonts/bootstrap/','public/fonts/bootstrap');**
-* When working with Sessions, Redirects, etc.. add this on top of the Controller:
+* When working with Sessions, Redirects, etc.. add these on top of the Controller:
     * **use Illuminate\Support\Facades\Validator;**
     * **use Illuminate\Support\Facades\Input;**  
     * **use Illuminate\Support\Facades\Redirect;**  
     * **use Session;**
-* When working on Laravel Blade Forms, "Illuminate/Html" is deprecated so install "Collective/Html" Follow this [guide](https://laravelcollective.com/docs/5.2/html)
+* When working on Laravel's Blade Forms, "Illuminate/Html" is deprecated so install "Collective/Html" Follow this [guide](https://laravelcollective.com/docs/5.2/html)
 
 ## Resource Controller API:
 
@@ -125,14 +123,14 @@ in **bold** are either commands to be written in the CLI, code snippets or file 
 
 * Sign up in the [Heroku website](https://id.heroku.com/login)
 * Install the Heroku CLI following this [guide](https://devcenter.heroku.com/articles/heroku-command-line)   
-* Type in the console to check if setup is successful and to finish insstallation:
+* Type in the console to check if setup is successful and to finish installation:
     * **heroku --version**
 * Navigate to the project directory and have it in a "*git commit*"-state
-* Create a Procfile (tells Heroku what command to use to launch the web server correctly):
+* Create a "Procfile" (tells Heroku what command to use to launch the web server correctly):
     * **echo web: vendor/bin/heroku-php-apache2 public/ > Procfile**
-* Add and commit once again and create the heroku application:
+* Add and commit once again and create the Heroku application:
     * **heroku create**
-* Declare a buildpack (explicitly tells heroku that the app is written in PHP instead of NodeJS):
+* Declare a "build pack" (explicitly tells Heroku that the app is written in PHP instead of NodeJS):
     * **heroku buildpacks:set heroku/php**
 * Generate the Laravel encryption key (encrypts user sessions and other information):
     * **php artisan key:generate --show** (copy the generated key e.g:**"base64:GpYbrM06CjwxP++I2Y3eccFqTnGfQddQVTNjOuGPcdE="**)
@@ -174,7 +172,7 @@ in **bold** are either commands to be written in the CLI, code snippets or file 
     'schema'   => 'public',
   ],
 ```
-* To check your pgsql information if you want to add the it directly to the snippet above:
+* To check your "pgsql" information if you want to add the it directly to the snippet above:
     * **heroku config --app lit-retreat-6653 | grep DATABASE_URL**
 * Commit changes and push to Heroku and finally migrate your database:
     * **heroku run php artisan migrate --app app_name**
