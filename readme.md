@@ -25,6 +25,9 @@ Database is currently set to Heroku's PostgreSQL. To change it back to MySQL for
 development, go to "/config/database.php" and change
 " **'default' => 'pgsql',** " to " **'default' => 'mysql',** ".
 
+Below you will find the configurations and workflow that this project has partaken as well as
+links to the guides I have followed to achieve certain tasks.
+
 ## Setting up the environment:
 
 * Make sure you have [Node.js](https://nodejs.org/en/) version 6 or higher:
