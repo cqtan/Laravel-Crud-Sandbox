@@ -1,7 +1,7 @@
 # My simple Laravel 5.3 Application using CRUD :joy_cat:
 ![Sandbox](/resources/images/sandbox-banner.jpg)
 
-# Introduction:
+## Introduction:
 
 This project aims to copy and remake Lynda's PHP exercises from Chapters 15 - 19
 while using Laravel 5.3 as the framework and serves as a reference. Additionally,
